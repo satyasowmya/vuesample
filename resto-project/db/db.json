@@ -17,6 +17,44 @@
       "email": "bruce@test.com",
       "password": "bruce@123",
       "id": 3
+    },
+    {
+      "name": "Sam",
+      "email": "sam@test.com",
+      "password": "sam@123",
+      "id": 4
+    },
+    {
+      "name": "Darshu",
+      "email": "Darshu@test.com",
+      "password": "Darshu@123",
+      "id": 5
+    }
+  ],
+  "restuarants": [
+    {
+      "name": "MFC",
+      "address": "Hitech city",
+      "contact": "966641",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Dominos",
+      "contact": 22222,
+      "address": "Pragathi Nagar"
+    },
+    {
+      "name": "MC Donalds",
+      "address": "Nizampet",
+      "contact": "34869",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "KFC",
+      "contact": 44444,
+      "address": "Miyapur"
     }
   ]
 }

@@ -1,37 +1,31 @@
 <template>
 <img class="logo" alt="Vue logo" src="../assets/resto.jpg">
-<h1>Sign Up</h1>
-<div class="register">
-    <input type="text" v-model="name" placeholder="Enter Name" />
+<h1>Login</h1>
+<div class="login">
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="password" v-model="password" placeholder="Enter Password" />
-    <button v-on:click="signUp">Sign Up</button>
+    <button v-on:click="login">Login</button>
     <p>
-        <router-link to='/login'>Login</router-link>
+        <router-link to='/signup'>Sign Up</router-link>
     </p>
 </div>
 </template>
 
 <script>
-import axios from "axios"
+import axios from 'axios'
 export default {
-    name: "Sign Up",
+    name: 'Login',
     data() {
         return {
-            name: '',
             email: '',
             password: ''
         }
     },
     methods: {
-        async signUp() {
-            let result = await axios.post("http://localhost:3000/user", {
-                name: this.name,
-                email: this.email,
-                password: this.password
-            });
-            console.log(result)
-            if (result.status == 201) {
+        async login() {
+            let result = await axios.get(`http://localhost:3000/user?email=${this.email}&password=${this.password}`)
+            console.warn(result)
+            if (result.status == 200 && result.data.length > 0) {
                 localStorage.setItem("user-info", JSON.stringify(result.data))
                 this.$router.push({
                     name: 'Home'
@@ -49,6 +43,3 @@ export default {
     }
 }
 </script>
-
-<style>
-</style>
